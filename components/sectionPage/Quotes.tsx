@@ -11,14 +11,13 @@ const Quotes = () => {
   const quotes = [
     {
       id: 1,
-      quote: `"ON1Y LLC exceeded my expectations. Highly recommend!"`,
-      author: "- L. McGill",
+      quote: `"Efficient and very reliable with their time and work, will work with them again any day!"`,
+      author: "- D. Wagner",
     },
     {
       id: 2,
-      quote: ` "Working with ON1Y LLC was a pleasure from start to finish. They were
-        professional and I would definitely work with them again!"`,
-      author: "-A. Morgan",
+      quote: ` "Very professional and knowledgeable gentlemen - project cost was estimated practically on the dot!"`,
+      author: "-G. Parker",
     },
   ];
   useEffect(() => {
@@ -35,12 +34,12 @@ const Quotes = () => {
           inView ? "animate-shiftRight" : ""
         }`}
       >
-        Want to Join Our Team?
+        Interested in our services?
       </h1>
       <p ref={ref}>
-        If you are interested in joining ON1Y LLC, please feel free to contact
-        us at HR@on1yglobal.com to inquire about current job opportunities. We
-        look forward to hearing from you soon!{" "}
+        If you are interested in our cost estimating services, please feel free to contact
+        us at estimates@zedbrothers.com to discuss your project requirements. We
+        look forward to helping you achieve your project goals!{" "}
       </p>
       <div className="pt-10 h-[200px] text-center mt-4 lg:mt-0">
         <h2>{quotes[num].quote} </h2>

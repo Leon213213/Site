@@ -7,8 +7,8 @@ const Footer = () => {
     <footer className="bg-gray-800  text-white py-6">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         {/* Company Information */}
-        <div className=" text-center mb-4 md:mb-0">
-          <h2 className="text-xl font-bold">ON1Y LLC</h2>
+        <div className=" text-center mb-4 pl-10 md:mb-0">
+          <h2 className="text-xl font-bold">Zed Brothers LLC</h2>
           <p className="text-sm">
             © {new Date().getFullYear()} All rights reserved.
           </p>
@@ -16,8 +16,8 @@ const Footer = () => {
         <div className="mb-4 md:mb-0  p-4 px-5">
           <ul className="md:text-start text-center">
           <li className="flex flex-col">
-  <a className=" hover:text-gray-500 transition-all" href="tel:+18179377906">Phone: (817) 937-7906</a> 
-  <a className=" hover:text-gray-500 transition-all" href="mailto:corporate@on1yglobal.com">Email: corporate@on1yglobal.com</a> 
+  <a className=" hover:text-gray-500 transition-all" href="tel:+18283317901">Phone: (828) 331-7901</a> 
+  <a className=" hover:text-gray-500 transition-all" href="mailto:estimates@zedbrothers.com">Email: estimates@zedbrothers.com</a> 
   <a className=" hover:text-gray-500 transition-all" href="https://www.google.com/maps?q=3000+S+Hulen+Street+Suite+124-877+Fort+Worth,+TX+76109" target="_blank">
     Address: 3000 S Hulen Street Suite 124-877, Fort Worth, TX 76109, US
   </a>
@@ -25,7 +25,7 @@ const Footer = () => {
           </ul>
         </div>
         {/* Social Media Icons */}
-        <div className="flex bg-white p-4 rounded-lg ">
+        <div className="flex bg-white p-4 rounded-lg mr-6 ">
           {/* Instagram Icon */}
           <a
             href="https://www.instagram.com/on1ynetwork?igsh=MTI3bnk3MGk1YmI3aQ%3D%3D&utm_source=qr"

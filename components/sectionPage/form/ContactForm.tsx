@@ -8,9 +8,7 @@ const ContactForm = () => {
     name: "",
     lastName: "",
     email: "",
-    category: "", // films, tech, internship, casting
     description: "",
-    file: null,
     radius: "",
   });
   const [submissionStatus, setSubmissionStatus] = useState<"success" | "error" | null>(null);
@@ -74,7 +72,6 @@ const ContactForm = () => {
     formDataToSend.append("name", formData.name || "");
     formDataToSend.append("last Name", formData.lastName || "");
     formDataToSend.append("email", formData.email || "");
-    formDataToSend.append("category", formData.category || "");
     formDataToSend.append("description", formData.description || "");
     formDataToSend.append("radius", formData.radius || "");
 
@@ -100,7 +97,6 @@ const ContactForm = () => {
           name: "",
           lastName: "",
           email: "",
-          category: "",
           description: "",
           file: null,
           radius: "",
@@ -121,12 +117,12 @@ const ContactForm = () => {
   return (
     <>
     <form
-      className="my-10 rounded-lg w-full border-gray-200 border-[.5px] sm:w-fit text-black "
+      className="my-10 rounded-2xl w-full bg-gray-800 border-gray-200 border-[3px] sm:w-fit text-white "
       onSubmit={handleSubmit}
     >
       <div className="p-3">
         <h1 className="flex justify-center items-center text-3xl border-b-[1px] border-gray-300 text-white ">
-          Apply
+          Contact Us
         </h1>
 
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
@@ -135,27 +131,31 @@ const ContactForm = () => {
               Full Name <span className="text-red-500">*</span>
             </label>
             <input
+              className="rounded-lg py-5"
               type="text"
+              id="name"
               name="name"
-              value={formData.name || ""}
+              value={formData.name}
               onChange={handleChange}
+              placeholder="First Name"
             />
-            <label className="text-xs text-gray-300" htmlFor="email">
-              First Name
-            </label>
+            
             {errors.name && <span className="text-red-500">{errors.name}</span>}
           </div>
 
           <div className="flex  justify-end flex-col p-3">
-            <input
-              type="text"
-              name="lastName"
-              value={formData.lastName || ""}
-              onChange={handleChange}
-            />
-            <label className="text-xs text-gray-300" htmlFor="email">
-              Last Name
+            <label htmlFor="lastName">
+              Last Name <span className="text-red-500">*</span>
             </label>
+            <input
+              className="rounded-lg py-5"
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              placeholder="Last Name"
+            />
             {errors.lastName && (
               <span className="text-red-500">{errors.lastName}</span>
             )}
@@ -167,89 +167,31 @@ const ContactForm = () => {
             E-mail <span className="text-red-500">*</span>
           </label>
           <input
+            className="rounded-lg py-5"
             type="email"
+            id="email"
             name="email"
-            value={formData.email || ""}
+            value={formData.email}
             onChange={handleChange}
+            placeholder="example@example.com"
           />
           {errors.email && <span className="text-red-500">{errors.email}</span>}
-          <label className="text-xs text-gray-300" htmlFor="email">
-            example@example.com
-          </label>
         </div>
-
-        <div className="flex flex-col p-3">
-          <label htmlFor="category">
-            Category <span className="text-red-500">*</span>
-          </label>
-          <select
-            className="px-6 rounded-md text-white bg-black py-2"
-            name="category"
-            value={formData.category || ""}
-            onChange={handleChange}
-          >
-            <option value="">Select a category</option>
-            <option value="films">Films</option>
-            <option value="tech">Tech</option>
-            <option value="internship">Internship</option>
-            <option value="casting">Casting</option>
-          </select>
-          {errors.category && (
-            <span className="text-red-500">{errors.category}</span>
-          )}
-        </div>
-
-        {["films", "tech", "internship"].includes(formData.category || "") && (
-          <div className="flex flex-col items-center pt-3">
-            <label className="flex flex-col">
-              <ul className="text-white">
-                <li>* Please upload your document (PDF, DOC, or DOCX).</li>
-                <li>* Maximum file size: 10 MB.</li>
-              </ul>
-              <input
-                className="text-white border-none p-0 hover:shadow-none mt-2"
-                type="file"
-                accept=".pdf,.doc,.docx"
-                onChange={handleFileChange}
-              />
-            </label>
-            {errors.file && <span className="text-red-500">{errors.file}</span>}
-          </div>
-        )}
-
-        {formData.category === "casting" && (
-          <div className="flex flex-col items-center pt-3">
-            <ul className="text-white">
-              <li>
-                * Please upload your audition video (MP4, quicktime, webm only).
-              </li>
-              <li>* Maximum file size: 100 MB.</li>
-              <li>* Video length should be 1 minute and 30 seconds.</li>
-            </ul>
-
-            <input
-              className="text-white p-0 border-none hover:shadow-none mt-2"
-              type="file"
-              accept="video/mp4, video/quicktime, video/webm"
-              onChange={handleFileChange}
-            />
-            {errors.file && <span className="text-red-500">{errors.file}</span>}
-          </div>
-        )}
 
         <div className="p-3">
           <div className="py-2">
-          <label htmlFor="description">
-      Message <span className="text-red-500">*</span> (max 200 characters)
-    </label>
+            <label htmlFor="description">
+              Message <span className="text-red-500">*</span> (max 200 characters)
+            </label>
           </div>
           <div>
             <textarea
-              className="w-full min-h-20 h-20"
+              className="rounded-xl w-full"
+              id="description"
               name="description"
-              value={formData.description || ""}
+              value={formData.description}
               onChange={handleChange}
-              maxLength={200}
+              placeholder="Describe your project or inquiry"
             ></textarea>
             {errors.description && (
               <span className="text-red-500">{errors.description}</span>
