@@ -36,7 +36,7 @@ function About() {
             planning and execution.
           </p>
         </div>
-        <img src="/img/logo/logo.png" alt="founder1" className="w-1/4 h-1/4 ml-20 mb-20" />
+        <img src="/img/about/steve.jpg" alt="founder1" className="w-auto h-[400px] ml-20 mb-20 mt-32 object-contain rounded-3xl" />
         </div>
       </div>
     </>
